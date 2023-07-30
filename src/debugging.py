@@ -25,3 +25,6 @@ def logger(level=logging.INFO) -> logging.Logger:
         logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     )
     return logger
+
+
+app_logger = logger()
