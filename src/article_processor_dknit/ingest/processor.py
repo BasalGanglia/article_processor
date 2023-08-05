@@ -12,6 +12,11 @@ from typing import Dict
 
 from .debugging import app_logger as log
 
+# This code uses the Spacy NLP library to extract entities from a message.
+# The Spacy NLP library is very powerful, but it is also very slow.
+# If we were to use it to process all messages, it would take a long time.
+# Therefore, we only use it to process posts that are longer than 10 words.
+
 
 class DataProcessor:
     def __init__(self):
@@ -29,7 +34,7 @@ class DataProcessor:
         ]
 
         def entities(self, doc) -> Counter:
-            t = [e.text for e in doc.ents if e.label_ not in self.skip]
+            t = [e.text.lower() for e in doc.ents if e.label_ not in self.skip]
             return Counter(t)
 
         def process(self, text: str) -> Dict[str, int]:
