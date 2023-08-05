@@ -3,6 +3,20 @@
 	"features": {
 		"ghcr.io/devcontainers/features/azure-cli:1": {},
 		"ghcr.io/devcontainers-contrib/features/black:2": {},
-		"ghcr.io/devcontainers-contrib/features/flake8:2": {}
+		"ghcr.io/devcontainers-contrib/features/flake8:2": {},
+		"ghcr.io/warrenbuckley/codespace-features/sqlite:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"sourcery.sourcery",
+				"GitHub.copilot",
+				"GitHub.copilot-labs",
+				"GitHub.copilot-chat",
+				"benjaminbenais.copilot-theme",
+				"ms-python.black-formatter",
+				"ms-python.python"
+			]
+		}
 	}
 }
