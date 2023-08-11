@@ -1,0 +1,4 @@
+[console_scripts]
+getdataset = simulator.download:download_and_extract
+ingestiond = ingest.backend:main
+uploaddataset = simulator.upload:main
