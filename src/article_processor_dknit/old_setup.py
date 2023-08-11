@@ -1,0 +1,42 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="ingestion",
+    version="0.0.1",
+    author="dknit",
+    description="python explorations.",
+    packages=find_packages(),
+    entry_points={
+        "console_scripts": [
+            "ingestiond=ingest.backend:main",
+            "getdataset=simulator.download:download_and_extract",
+            "uploaddataset=simulator.upload:main",
+        ]
+    },
+    install_requires=[
+        "fastapi==0.58.0",
+        "google-cloud-firestore==2.7.0",
+        "pydantic==1.5.1",
+        "uvicorn==0.11.7",
+        "gunicorn==20.0.4",
+        "passlib==1.7.2",
+        "bcrypt==3.1.7",
+        "PyJWT==1.7.1",
+        "spacy==2.3.2",
+        "spacy-lookups-data==0.3.2",
+        "typer==0.3.0",
+        "httpx==0.13.3",
+        "supervisor==4.2.0",
+    ],
+    extras_require={
+        "dev": [
+            "pytest==5.4.3",
+        ],
+        "web": [
+            "wordcloud==1.7.0",
+            "falcon",
+            "falcon==2.0.0",
+            "google-cloud-storage==1.29.0",
+        ],
+    },
+)
